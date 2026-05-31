@@ -5,3 +5,9 @@ function getComputerChoice() {
   else { return 'SCISSORS' }
 }
 console.log(getComputerChoice());
+
+function getHumanChoice() {
+  const userInput = prompt('Input your Choice');
+  return userInput;
+}
+console.log(getHumanChoice());
