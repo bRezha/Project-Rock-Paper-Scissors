@@ -50,7 +50,7 @@ function playRound(humanChoice, computerChoice) {
   }
 
   else {
-    console.log("You Lose!, computer beats You");
+    console.log("You Lose!, Computer beats You");
     computerScore++; console.log('Computer Score: ' + computerScore);
     console.log('Human Score: ' + humanScore);
   }
