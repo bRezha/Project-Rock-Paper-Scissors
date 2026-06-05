@@ -1,3 +1,16 @@
+- [Project: Rock Paper Scissors - Pseudocode](#project-rock-paper-scissors---pseudocode)
+  - [Step 1: Project Setup](#step-1-project-setup)
+  - [Step 2: Computer Choice Logic](#step-2-computer-choice-logic)
+    - [FUNCTION: getComputerChoice()](#function-getcomputerchoice)
+  - [Step 3: Human Choice Logic](#step-3-human-choice-logic)
+    - [FUNCTION: getHumanChoice()](#function-gethumanchoice)
+  - [Step 4: Game Scores Initialization](#step-4-game-scores-initialization)
+  - [Step 5: Single Round Logic](#step-5-single-round-logic)
+    - [FUNCTION: playRound(humanChoice, computerChoice)](#function-playroundhumanchoice-computerchoice)
+  - [Step 6: 5 Round Game Logic](#step-6-5-round-game-logic)
+    - [FUNCTION: playGame()](#function-playgame)
+  - [Execution](#execution)
+
 # Project: Rock Paper Scissors - Pseudocode
 
 ## Step 1: Project Setup
