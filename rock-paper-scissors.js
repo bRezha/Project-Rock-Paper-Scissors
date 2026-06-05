@@ -81,13 +81,19 @@ function playGame() {
   //End Game Announcement:
   function finalResult() {
     if (humanScore > computerScore) {
-      console.log('CONGRATULATIONS! YOU WIN THE MATCH!')
+      console.log('===================================');
+      console.log('CONGRATULATIONS! YOU WIN THE MATCH!');
+      console.log('===================================');
     }
     else if (computerScore > humanScore) {
-      console.log('GAME OVER! COMPUTER WINS THE MATCH')
+      console.log('++++++++++++++++++++++++++++++++++');
+      console.log('GAME OVER! COMPUTER WINS THE MATCH');
+      console.log('++++++++++++++++++++++++++++++++++');
     }
     else {
-      console.log('"THE MATCH ENDS IN A TIE')
+      console.log('***********************');
+      console.log('THE MATCH ENDS IN A TIE');
+      console.log('***********************');
     }
   }
   finalResult();
