@@ -61,5 +61,21 @@ function playGame() {
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
   playRound(humanSelection, computerSelection);
+  //Round 2:
+  const humanSelection2 = getHumanChoice();
+  const computerSelection2 = getComputerChoice();
+  playRound(humanSelection2, computerSelection2);
+  //Round 3:
+  const humanSelection3 = getHumanChoice();
+  const computerSelection3 = getComputerChoice();
+  playRound(humanSelection3, computerSelection3);
+  //Round 4:
+  const humanSelection4 = getHumanChoice();
+  const computerSelection4 = getComputerChoice();
+  playRound(humanSelection4, computerSelection4);
+  //Round 5:
+  const humanSelection5 = getHumanChoice();
+  const computerSelection5 = getComputerChoice();
+  playRound(humanSelection5, computerSelection5);
 }
 playGame();
