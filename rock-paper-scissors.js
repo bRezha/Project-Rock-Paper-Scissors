@@ -29,8 +29,8 @@ function playGame() {
 
     if (humanChoice === computerChoice) {
       console.log('DRAW');
-      console.log('Human Score: 0');
-      console.log('Computer Score: 0');
+      console.log('Human Score: ' + humanScore);
+      console.log('Computer Score: ' + computerScore);
     }
 
     else if (humanChoice === 'ROCK' && computerChoice === 'SCISSORS') {
