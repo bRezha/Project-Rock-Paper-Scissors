@@ -77,5 +77,19 @@ function playGame() {
   const humanSelection5 = getHumanChoice();
   const computerSelection5 = getComputerChoice();
   playRound(humanSelection5, computerSelection5);
+
+  //End Game Announcement:
+  function finalResult() {
+    if (humanScore > computerScore) {
+      console.log('CONGRATULATIONS! YOU WIN THE MATCH!')
+    }
+    else if (computerScore > humanScore) {
+      console.log('GAME OVER! COMPUTER WINS THE MATCH')
+    }
+    else {
+      console.log('"THE MATCH ENDS IN A TIE')
+    }
+  }
+  finalResult();
 }
 playGame();
