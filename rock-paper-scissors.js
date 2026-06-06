@@ -5,14 +5,12 @@ function getComputerChoice() {
   else if (randomNumber === 1) { return 'PAPER' }
   else { return 'SCISSORS' }
 }
-//console.log(getComputerChoice());
 
 //Step 3:Human Logic Choice
 function getHumanChoice() {
   const userInput = prompt('Input your Choice');
   return userInput;
 }
-//console.log(getHumanChoice());
 
 //Step 6: 5 Round Game Logic 
 function playGame() {
