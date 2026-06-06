@@ -19,6 +19,7 @@ function playGame() {
   //Step 4:  Game Score Initialization
   let humanScore = 0;
   let computerScore = 0;
+  let tieCount = 0;
 
   //step 5: Single Round Logic
   function playRound(humanChoice, computerChoice) {
@@ -28,9 +29,11 @@ function playGame() {
     console.log('Human Choice:', humanChoice);
 
     if (humanChoice === computerChoice) {
-      console.log('DRAW');
+      console.log('DRAW!');
+      tieCount++;
       console.log(`Human Score: ${humanScore}`);
       console.log(`Computer Score: ${computerScore}`);
+      console.log(`Draw Score: ${tieCount}`);
     }
 
     else if (humanChoice === 'ROCK' && computerChoice === 'SCISSORS') {
@@ -38,6 +41,7 @@ function playGame() {
       humanScore++;
       console.log(`Human Score: ${humanScore}`);
       console.log(`Computer Score: ${computerScore}`);
+      console.log(`Draw Score: ${tieCount}`);
     }
 
     else if (humanChoice === 'PAPER' && computerChoice === 'ROCK') {
@@ -45,6 +49,7 @@ function playGame() {
       humanScore++;
       console.log(`Human Score: ${humanScore}`);
       console.log(`Computer Score: ${computerScore}`);
+      console.log(`Draw Score: ${tieCount}`);
     }
 
     else if (humanChoice === 'SCISSORS' && computerChoice === 'PAPER') {
@@ -52,6 +57,7 @@ function playGame() {
       humanScore++;
       console.log(`Human Score: ${humanScore}`);
       console.log(`Computer Score: ${computerScore}`);
+      console.log(`Draw Score: ${tieCount}`);
     }
 
     else {
@@ -59,6 +65,7 @@ function playGame() {
       computerScore++;
       console.log(`Computer Score: ${computerScore}`);
       console.log(`Human Score: ${humanScore}`);
+      console.log(`Draw Score: ${tieCount}`);
     }
   }
   //Round 1:
