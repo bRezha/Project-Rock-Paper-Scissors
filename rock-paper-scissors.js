@@ -29,43 +29,32 @@ function playGame() {
     if (humanChoice === computerChoice) {
       console.log('DRAW!');
       tieCount++;
-      console.log(`Human Score: ${humanScore}`);
-      console.log(`Computer Score: ${computerScore}`);
-      console.log(`Draw Score: ${tieCount}`);
     }
 
     else if (humanChoice === 'ROCK' && computerChoice === 'SCISSORS') {
       console.log('You Win!, Rock beats Scissors');
       humanScore++;
-      console.log(`Human Score: ${humanScore}`);
-      console.log(`Computer Score: ${computerScore}`);
-      console.log(`Draw Score: ${tieCount}`);
     }
 
     else if (humanChoice === 'PAPER' && computerChoice === 'ROCK') {
       console.log('You Win!, Paper beats Rock');
       humanScore++;
-      console.log(`Human Score: ${humanScore}`);
-      console.log(`Computer Score: ${computerScore}`);
-      console.log(`Draw Score: ${tieCount}`);
     }
 
     else if (humanChoice === 'SCISSORS' && computerChoice === 'PAPER') {
       console.log('You Win!, Scissors beats Paper');
       humanScore++;
-      console.log(`Human Score: ${humanScore}`);
-      console.log(`Computer Score: ${computerScore}`);
-      console.log(`Draw Score: ${tieCount}`);
     }
 
     else {
       console.log("You Lose!, Computer beats You");
       computerScore++;
-      console.log(`Computer Score: ${computerScore}`);
-      console.log(`Human Score: ${humanScore}`);
-      console.log(`Draw Score: ${tieCount}`);
     }
+    console.log(`Computer Score: ${computerScore}`);
+    console.log(`Human Score: ${humanScore}`);
+    console.log(`Draw Score: ${tieCount}`);
   }
+
   //Round 1:
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
