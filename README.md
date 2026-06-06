@@ -41,7 +41,7 @@
 
 - **STORE** `humanScore` = 0
 - **STORE** `computerScore` = 0
-- **STORE** `tieCount`=0
+- **STORE** `tieCount` = 0
 
   _(Moved inside the playGame function in Step 6 to keep global scope clean)_
 
@@ -71,7 +71,7 @@
 
 - **STORE** `humanScore` = 0
 - **STORE** `computerScore` = 0
-- - **STORE** `tieCount`=0
+- **STORE** `tieCount` = 0
 
 - ### ROUND 1
   - **STORE** `humanSelection` = **CALL** getHumanChoice()
