@@ -34,7 +34,7 @@ function playGame() {
     humanChoice = humanChoice.toUpperCase();
     console.log(`ROUND : ${roundCount}`);
     roundCount++;
-    console.log('Computer Choice:', computerChoice)
+    console.log('Computer Choice:', computerChoice);
     console.log('Human Choice:', humanChoice);
 
     if (humanChoice === computerChoice) {
@@ -54,7 +54,7 @@ function playGame() {
     console.log(`Computer Score: ${computerScore}`);
     console.log(`Human Score: ${humanScore}`);
     console.log(`Draw Score: ${tieCount}`);
-    console.log('|---------------------|')
+    console.log('|---------------------|');
   }
 
   //Round 1:
