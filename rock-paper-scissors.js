@@ -18,11 +18,21 @@ function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   let tieCount = 0;
+  let roundCount = 1;
+
+  //function helper for human win
+  function checkIfHumanWins(human, computer) {
+    return (
+      (human === 'ROCK' && computer === 'SCISSORS') ||
+      (human === 'PAPER' && computer === 'ROCK') ||
+      (human === 'SCISSORS' && computer === 'PAPER')
+    );
+  }
 
   //step 5: Single Round Logic
   function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toUpperCase();
-
+    console.log('ROUND :', roundCount++)
     console.log('Computer Choice:', computerChoice)
     console.log('Human Choice:', humanChoice);
 
@@ -31,28 +41,19 @@ function playGame() {
       tieCount++;
     }
 
-    else if (humanChoice === 'ROCK' && computerChoice === 'SCISSORS') {
-      console.log('You Win!, Rock beats Scissors');
-      humanScore++;
-    }
-
-    else if (humanChoice === 'PAPER' && computerChoice === 'ROCK') {
-      console.log('You Win!, Paper beats Rock');
-      humanScore++;
-    }
-
-    else if (humanChoice === 'SCISSORS' && computerChoice === 'PAPER') {
-      console.log('You Win!, Scissors beats Paper');
+    else if (checkIfHumanWins(humanChoice, computerChoice)) {
+      console.log(`You Win!, ${humanChoice} beats ${computerChoice}`);
       humanScore++;
     }
 
     else {
-      console.log("You Lose!, Computer beats You");
+      console.log(`You Lose!, ${computerChoice}  beats ${humanChoice}`);
       computerScore++;
     }
     console.log(`Computer Score: ${computerScore}`);
     console.log(`Human Score: ${humanScore}`);
     console.log(`Draw Score: ${tieCount}`);
+    console.log('|---------------------|')
   }
 
   //Round 1:
