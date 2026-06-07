@@ -32,7 +32,7 @@ function playGame() {
   //step 5: Single Round Logic
   function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toUpperCase();
-    console.log(`ROUND : , ${roundCount}`);
+    console.log(`ROUND : ${roundCount}`);
     roundCount++;
     console.log('Computer Choice:', computerChoice)
     console.log('Human Choice:', humanChoice);
