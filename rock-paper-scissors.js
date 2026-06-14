@@ -8,13 +8,26 @@ function getComputerChoice() {
 
 //Step 3:Human Logic Choice
 function getHumanChoice() {
-  const userInput = prompt('Input your Choice: (rock/paper/scissors)');
-  return userInput;
+  let userInput;
+  let checkedInput;
+  // Add do-while-loop for human choice input
+  do {
+    userInput = prompt('Input your Choice: (rock/paper/scissors)');
+    checkedInput = userInput ? userInput.toUpperCase() : '';
+
+    //checking human input
+    if (checkedInput !== 'ROCK' && checkedInput !== 'PAPER' && checkedInput !== 'SCISSORS') {
+      alert('Wrong input! Only Input (rock/paper/scissors)');
+    }
+
+    // checking and looping
+  } while (checkedInput !== 'ROCK' && checkedInput !== 'PAPER' && checkedInput !== 'SCISSORS');
+
+  return checkedInput;
 }
 
 //Step 6: 5 Round Game Logic 
 function playGame() {
-  //Step 4:  Game Score Initialization
   let humanScore = 0;
   let computerScore = 0;
   let tieCount = 0;
@@ -31,7 +44,7 @@ function playGame() {
 
   //step 5: Single Round Logic
   function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toUpperCase();
+    //humanChoice = humanChoice.toUpperCase();
     console.log(`ROUND : ${roundCount}`);
     roundCount++;
     console.log('Computer Choice:', computerChoice)
