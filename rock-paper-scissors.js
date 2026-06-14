@@ -8,7 +8,7 @@ function getComputerChoice() {
 
 //Step 3:Human Logic Choice
 function getHumanChoice() {
-  const userInput = prompt('Input your Choice');
+  const userInput = prompt('Input your Choice: (rock/paper/scissors)');
   return userInput;
 }
 
