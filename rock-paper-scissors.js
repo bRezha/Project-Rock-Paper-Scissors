@@ -13,16 +13,28 @@ function getHumanChoice() {
   // Add do-while-loop for human choice input
   do {
     userInput = prompt('Input your Choice: (rock/paper/scissors)');
-    checkedInput = userInput ? userInput.toUpperCase() : '';
-
-    //checking human input
-    if (checkedInput !== 'ROCK' && checkedInput !== 'PAPER' && checkedInput !== 'SCISSORS') {
-      alert('Wrong input! Only Input (rock/paper/scissors)');
+    //Cancel Input
+    if (userInput === null) {
+      console.log('Game Cancelled!');
+      checkedInput = 'CANCEL';
+      break;
     }
 
-    // checking and looping
-  } while (checkedInput !== 'ROCK' && checkedInput !== 'PAPER' && checkedInput !== 'SCISSORS');
+    checkedInput = userInput ? userInput.toUpperCase() : '';
+    //checking human input
+    if
+      (checkedInput !== 'ROCK' &&
+      checkedInput !== 'PAPER' &&
+      checkedInput !== 'SCISSORS') {
+      alert('Wrong input! Only Input (rock/paper/scissors)');
+    }
+  }
 
+  // checking and looping
+  while
+    (checkedInput !== 'ROCK' &&
+    checkedInput !== 'PAPER' &&
+    checkedInput !== 'SCISSORS');
   return checkedInput;
 }
 
@@ -44,7 +56,7 @@ function playGame() {
 
   //step 5: Single Round Logic
   function playRound(humanChoice, computerChoice) {
-    //humanChoice = humanChoice.toUpperCase();
+    if (humanChoice === 'CANCEL') { return; }
     console.log(`ROUND : ${roundCount}`);
     roundCount++;
     console.log('Computer Choice:', computerChoice);
