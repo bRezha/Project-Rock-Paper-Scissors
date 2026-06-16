@@ -10,10 +10,10 @@ function getComputerChoice() {
 function getHumanChoice() {
   let userInput;
   let checkedInput;
-  // Add do-while-loop for human choice input
+  // Add do-while loop for human choice input
   do {
     userInput = prompt('Input your Choice: (rock/paper/scissors)');
-    //Cancel Input
+    //Human Cancel Input
     if (userInput === null) {
       console.log('Game Cancelled!');
       checkedInput = 'CANCEL';
@@ -43,7 +43,7 @@ function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   let tieCount = 0;
-  let roundCount = 1;
+  let humanCancel = false;
 
   //function helper for human win
   function checkIfHumanWins(human, computer) {
@@ -55,10 +55,10 @@ function playGame() {
   }
 
   //step 5: Single Round Logic
-  function playRound(humanChoice, computerChoice) {
+  function playRound(humanChoice, computerChoice, currentRound) {
     if (humanChoice === 'CANCEL') { return; }
-    console.log(`ROUND : ${roundCount}`);
-    roundCount++;
+    console.log(`ROUND : ${currentRound}`);
+
     console.log('Computer Choice:', computerChoice);
     console.log('Human Choice:', humanChoice);
 
@@ -82,30 +82,26 @@ function playGame() {
     console.log('|---------------------|');
   }
 
-  //Round 1:
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
-  playRound(humanSelection, computerSelection);
-  //Round 2:
-  const humanSelection2 = getHumanChoice();
-  const computerSelection2 = getComputerChoice();
-  playRound(humanSelection2, computerSelection2);
-  //Round 3:
-  const humanSelection3 = getHumanChoice();
-  const computerSelection3 = getComputerChoice();
-  playRound(humanSelection3, computerSelection3);
-  //Round 4:
-  const humanSelection4 = getHumanChoice();
-  const computerSelection4 = getComputerChoice();
-  playRound(humanSelection4, computerSelection4);
-  //Round 5:
-  const humanSelection5 = getHumanChoice();
-  const computerSelection5 = getComputerChoice();
-  playRound(humanSelection5, computerSelection5);
+  //Round 1-5 Loop-for:
+  for (let i = 1; i <= 5; i++) {
+    const humanSelection = getHumanChoice();
+    //Break when human input cancel
+    if (humanSelection === 'CANCEL') {
+      humanCancel = true;
+      break;
+    }
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection, i);
+  }
 
   //End Game Announcement:
   function finalResult() {
-    if (humanScore > computerScore) {
+    if (humanCancel) {
+      console.log('+++++++++++++++++++');
+      console.log('Human Choose Cancel');
+      console.log('+++++++++++++++++++');
+    }
+    else if (humanScore > computerScore) {
       console.log('===================================');
       console.log('CONGRATULATIONS! YOU WIN THE MATCH!');
       console.log('===================================');
