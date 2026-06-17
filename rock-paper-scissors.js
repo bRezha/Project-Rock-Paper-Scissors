@@ -92,6 +92,15 @@ function playGame() {
     }
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection, i);
+
+    //Win logic for human/computer when reached 3 point || 2 point with 2 draw
+    if (humanScore === 3 ||
+      computerScore === 3 ||
+      (humanScore === 2 && tieCount === 2) ||
+      (computerScore === 2 && tieCount === 2)) {
+      console.log('Match point has been reached !')
+      break;
+    }
   }
 
   //End Game Announcement:
