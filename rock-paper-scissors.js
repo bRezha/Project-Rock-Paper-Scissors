@@ -17,7 +17,7 @@ function getHumanChoice() {
     if (userInput === null) {
       console.log('Game Cancelled!');
       checkedInput = 'CANCEL';
-      break;
+      break; // code stop and go to Ln:38 return checkedInput
     }
 
     checkedInput = userInput ? userInput.toUpperCase() : '';
@@ -88,7 +88,7 @@ function playGame() {
     //Break when human input cancel
     if (humanSelection === 'CANCEL') {
       humanCancel = true;
-      break;
+      break; //code stop & go to Ln. 120 finalResult() then go to Ln.99 if (humanCancel)
     }
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection, i);
