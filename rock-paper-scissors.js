@@ -15,13 +15,23 @@ function getHumanChoice() {
     userInput = prompt('Input your Choice: (rock/paper/scissors)');
     checkedInput = userInput ? userInput.toUpperCase() : '';
 
+    //checking human cancel
+    if (userInput === null) {
+      console.log('Game Cancelled')
+      checkedInput = 'CANCEL'
+      break;
+    }
     //checking human input
-    if (checkedInput !== 'ROCK' && checkedInput !== 'PAPER' && checkedInput !== 'SCISSORS') {
+    if (checkedInput !== 'ROCK' &&
+      checkedInput !== 'PAPER' &&
+      checkedInput !== 'SCISSORS') {
       alert('Wrong input! Only Input (rock/paper/scissors)');
     }
 
     // checking and looping
-  } while (checkedInput !== 'ROCK' && checkedInput !== 'PAPER' && checkedInput !== 'SCISSORS');
+  } while (checkedInput !== 'ROCK' &&
+  checkedInput !== 'PAPER' &&
+    checkedInput !== 'SCISSORS');
 
   return checkedInput;
 }
@@ -31,7 +41,17 @@ function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   let tieCount = 0;
-  let roundCount = 1;
+  let cancelRound = false;
+
+  //function helper for Early EndGame Conditions
+  function isGameOver() {
+    const winByThree = humanScore === 3 ||
+      computerScore === 3;//human or computer first reach 3 point
+
+    const winByLock = (humanScore === 2 ||
+      computerScore === 2) && tieCount === 2;//human or computer first reach 2 point & 2 draw
+    return winByThree || winByLock;
+  }
 
   //function helper for human win
   function checkIfHumanWins(human, computer) {
@@ -43,10 +63,11 @@ function playGame() {
   }
 
   //step 5: Single Round Logic
-  function playRound(humanChoice, computerChoice) {
+  function playRound(humanChoice, computerChoice, currentRound) {
     //humanChoice = humanChoice.toUpperCase();
-    console.log(`ROUND : ${roundCount}`);
-    roundCount++;
+    if (humanChoice === 'CANCEL') { return; }
+    console.log(`ROUND: ${currentRound}`);
+
     console.log('Computer Choice:', computerChoice);
     console.log('Human Choice:', humanChoice);
 
@@ -70,30 +91,31 @@ function playGame() {
     console.log('|---------------------|');
   }
 
-  //Round 1:
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
-  playRound(humanSelection, computerSelection);
-  //Round 2:
-  const humanSelection2 = getHumanChoice();
-  const computerSelection2 = getComputerChoice();
-  playRound(humanSelection2, computerSelection2);
-  //Round 3:
-  const humanSelection3 = getHumanChoice();
-  const computerSelection3 = getComputerChoice();
-  playRound(humanSelection3, computerSelection3);
-  //Round 4:
-  const humanSelection4 = getHumanChoice();
-  const computerSelection4 = getComputerChoice();
-  playRound(humanSelection4, computerSelection4);
-  //Round 5:
-  const humanSelection5 = getHumanChoice();
-  const computerSelection5 = getComputerChoice();
-  playRound(humanSelection5, computerSelection5);
+  //Round 1-5 for-Loop:
+  for (let i = 1; i <= 5; i++) {
+    const humanSelection = getHumanChoice();
+    //human choose cancel
+    if (humanSelection === 'CANCEL') {
+      cancelRound = true;
+      break;
+    }
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection, i);
+
+    //Early EndGAme Conditions check helper function Ln.66
+    if (isGameOver()) {
+      console.log('Match point has been reached !');
+      break;
+    }
+  }
 
   //End Game Announcement:
   function finalResult() {
-    if (humanScore > computerScore) {
+
+    if (cancelRound) {
+      console.log('Human Choose Cancel');
+    }
+    else if (humanScore > computerScore) {
       console.log('===================================');
       console.log('CONGRATULATIONS! YOU WIN THE MATCH!');
       console.log('===================================');
