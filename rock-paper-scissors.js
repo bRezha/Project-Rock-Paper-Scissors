@@ -4,6 +4,18 @@ const PAPER = 'PAPER';
 const SCISSORS = 'SCISSORS';
 const CANCEL = 'CANCEL';
 
+//function Helper for all Choice
+
+function isValidChoice(choice) {
+  return (
+    choice === ROCK ||
+    choice === PAPER ||
+    choice === SCISSORS
+  );
+}
+
+
+
 //Step 2: Computer Logic Choice
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
