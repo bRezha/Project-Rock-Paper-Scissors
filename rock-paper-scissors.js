@@ -80,7 +80,7 @@ function playGame() {
   //step 5: Single Round Logic
   function playRound(humanChoice, computerChoice, currentRound) {
     //humanChoice = humanChoice.toUpperCase();
-    if (humanChoice === 'CANCEL') { return; }
+    if (humanChoice === CANCEL) { return; }
     console.log(`ROUND: ${currentRound}`);
 
     console.log('Computer Choice:', computerChoice);
