@@ -16,9 +16,13 @@ function isValidChoice(choice) {
 //Step 2: Computer Logic Choice
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
-  if (randomNumber === 0) { return 'ROCK' }
-  else if (randomNumber === 1) { return 'PAPER' }
-  else { return 'SCISSORS' }
+  if (randomNumber === 0) {
+    return ROCK;
+  } else if (randomNumber === 1) {
+    return PAPER;
+  } else {
+    return SCISSORS;
+  }
 }
 
 //Step 3:Human Logic Choice
