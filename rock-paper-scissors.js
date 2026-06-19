@@ -71,9 +71,9 @@ function playGame() {
   //function helper for human win
   function checkIfHumanWins(human, computer) {
     return (
-      (human === 'ROCK' && computer === 'SCISSORS') ||
-      (human === 'PAPER' && computer === 'ROCK') ||
-      (human === 'SCISSORS' && computer === 'PAPER')
+      (human === ROCK && computer === SCISSORS) ||
+      (human === PAPER && computer === ROCK) ||
+      (human === SCISSORS && computer === PAPER)
     );
   }
 
