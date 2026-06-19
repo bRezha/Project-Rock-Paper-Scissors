@@ -41,7 +41,7 @@ function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   let tieCount = 0;
-  let cancelRound = false;
+  let humanCancel = false;
 
   //function helper for Early EndGame Conditions
   function isGameOver() {
