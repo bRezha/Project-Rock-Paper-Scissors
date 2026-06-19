@@ -1,3 +1,9 @@
+//Global game constant
+const ROCK = 'ROCK';
+const PAPER = 'PAPER';
+const SCISSORS = 'SCISSORS';
+const CANCEL = 'CANCEL';
+
 //Step 2: Computer Logic Choice
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
@@ -29,8 +35,9 @@ function getHumanChoice() {
     }
 
     // checking and looping
-  } while (checkedInput !== 'ROCK' &&
-  checkedInput !== 'PAPER' &&
+  } while
+    (checkedInput !== 'ROCK' &&
+    checkedInput !== 'PAPER' &&
     checkedInput !== 'SCISSORS');
 
   return checkedInput;
