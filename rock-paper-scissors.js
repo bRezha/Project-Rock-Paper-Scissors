@@ -110,7 +110,7 @@ function playGame() {
   for (let i = 1; i <= 5; i++) {
     const humanSelection = getHumanChoice();
     //human choose cancel
-    if (humanSelection === 'CANCEL') {
+    if (humanSelection === CANCEL) {
       humanCancel = true;
       break;
     }
