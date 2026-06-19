@@ -5,7 +5,6 @@ const SCISSORS = 'SCISSORS';
 const CANCEL = 'CANCEL';
 
 //function Helper for all Choice
-
 function isValidChoice(choice) {
   return (
     choice === ROCK ||
@@ -13,8 +12,6 @@ function isValidChoice(choice) {
     choice === SCISSORS
   );
 }
-
-
 
 //Step 2: Computer Logic Choice
 function getComputerChoice() {
@@ -40,18 +37,13 @@ function getHumanChoice() {
       break;
     }
     //checking human input
-    if (checkedInput !== 'ROCK' &&
-      checkedInput !== 'PAPER' &&
-      checkedInput !== 'SCISSORS') {
+    if (!isValidChoice(checkedInput)) {
       alert('Wrong input! Only Input (rock/paper/scissors)');
     }
 
     // checking and looping
   } while
-    (checkedInput !== 'ROCK' &&
-    checkedInput !== 'PAPER' &&
-    checkedInput !== 'SCISSORS');
-
+    (!isValidChoice(checkedInput));
   return checkedInput;
 }
 
@@ -115,7 +107,7 @@ function playGame() {
     const humanSelection = getHumanChoice();
     //human choose cancel
     if (humanSelection === 'CANCEL') {
-      cancelRound = true;
+      humanCancel = true;
       break;
     }
     const computerSelection = getComputerChoice();
@@ -131,7 +123,7 @@ function playGame() {
   //End Game Announcement:
   function finalResult() {
 
-    if (cancelRound) {
+    if (humanCancel) {
       console.log('Human Choose Cancel');
     }
     else if (humanScore > computerScore) {
