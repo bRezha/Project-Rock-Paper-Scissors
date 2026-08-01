@@ -117,7 +117,7 @@ function playGame() {
     const computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection, i);
 
-    //Early EndGAme Conditions check helper function Ln.66
+    //Early EndGAme Conditions check helper function Ln.62
     if (isGameOver()) {
       console.log('Match point has been reached !');
       break;
