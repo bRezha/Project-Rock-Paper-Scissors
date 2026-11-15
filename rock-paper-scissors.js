@@ -36,8 +36,8 @@ function getHumanChoice() {
 
     //checking human cancel
     if (userInput === null) {
-      console.log('Game Cancelled')
-      checkedInput = CANCEL
+      console.log('Game Cancelled');
+      checkedInput = CANCEL;
       break;
     }
     //checking human input
