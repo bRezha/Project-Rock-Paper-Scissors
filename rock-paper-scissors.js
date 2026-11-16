@@ -105,7 +105,7 @@ function playGame() {
   }
 
   //Round 1-5 for-Loop:
-  for (let i = 1; i <= 5; i++) {
+  for (let round = 1; round <= 5; round++) {
     const humanSelection = getHumanChoice();
     //human choose cancel
     if (humanSelection === CANCEL) {
@@ -113,7 +113,7 @@ function playGame() {
       break;
     }
     const computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection, i);
+    playRound(humanSelection, computerSelection, round);
 
     //Early EndGAme Conditions check helper function Ln.62
     if (isGameOver()) {
